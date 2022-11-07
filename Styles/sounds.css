@@ -5,6 +5,9 @@
     grid-template-columns: repeat(4,1fr);
     gap: 32px;
 
+    width: 100%;
+    max-width: 1200px;
+
 }
 .sounds button:hover{
     cursor: pointer;
@@ -14,7 +17,8 @@
 .sounds button {
     width: 100%;
     background: var(--bluedark);
-    padding: 20px;
+    height: 82px;
+    padding: 0 20px;
     border: 1px solid rgba(255,255, 255, 0.2);
     box-shadow: 1px 1px 6px rgba(0, 33, 105, 0.89);
     display: flex;
