@@ -1,14 +1,36 @@
 let sounds = []
 
+
+let soundsCache = new Map()
+
+
 function onSound(index) {
     const pathSound = sounds[index].path
      
-    const sound = new  Audio(pathSound)
+    let sound = soundsCache.get(index)
 
+    if(!sound){
+        sound = new Audio(pathSound)
+        soundsCache.set(index, sound)
+    }
+
+    sound.currentTime = 0   
     sound.play()
 
     console.log(sound)
 }
+
+document.addEventListener('keydown', ({key}) => {
+   const soundIndex =   sounds.findIndex(sounds => sounds.hotkey == key)   
+
+   console.log(soundIndex)
+
+   if(soundIndex == -1){
+    return
+   }
+
+   onSound(soundIndex)
+})
 
 fetch('../sounds.json').then(response => response.json()).then(data => 
     {sounds = data
