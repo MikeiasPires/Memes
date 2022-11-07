@@ -1,0 +1,28 @@
+@import url('./app.css');
+@import url('./sounds.css');
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --text:#f5f6fa;
+    --blue:#21d2ff;
+    --bluedark:#0093b8;
+
+}
+
+body{
+    background: radial-gradient(circle, var(--blue) 0%, var(--bluedark) 100%);
+}
+
+
+body, button{
+    color: var(--text);
+    font: 400 1rem 'Roboto' ,sans-serif;
+    ;
+}
+
